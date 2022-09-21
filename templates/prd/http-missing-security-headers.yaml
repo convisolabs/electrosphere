@@ -1,0 +1,26 @@
+nuclei-matcher-name:
+  strict-transport-security:
+    report:
+      type: notification
+      vid: 599
+      description: A aplicação <a href="{{host}}" target="_blank">{{host}}</a> não possui o cabeçalho de resposta "strict-transport-security" conforme demonstrado na evidência. Isso pode ser validado fazendo uma requisição à aplicação citada acima e observando sua resposta.
+  content-security-policy:
+    report:
+      type: notification
+      vid: 598
+      description: A aplicação <a href="{{host}}" target="_blank">{{host}}</a> não possui o cabeçalho de resposta "content-security-policy" conforme demonstrado na evidência. Isso pode ser validado fazendo uma requisição à aplicação citada acima e observando sua resposta.
+  permission-policy:
+    report:
+      type: notification
+      vid: 1048
+      description: A aplicação <a href="{{host}}" target="_blank">{{host}}</a> não possui o cabeçalho de resposta "permission-policy" conforme demonstrado na evidência. Isso pode ser validado fazendo uma requisição à aplicação citada acima e observando sua resposta.
+  x-frame-options:
+    report:
+      type: notification
+      vid: 596
+      description: A aplicação <a href="{{host}}" target="_blank">{{host}}</a> não possui o cabeçalho de resposta "x-frame-options" conforme demonstrado na evidência. Isso pode ser validado fazendo uma requisição à aplicação citada acima e observando sua resposta.
+  x-content-type-options:
+    report:
+      type: notification
+      vid: 597
+      description: A aplicação <a href="{{host}}" target="_blank">{{host}}</a> não possui o cabeçalho de resposta "x-content-type-options" conforme demonstrado na evidência. Isso pode ser validado fazendo uma requisição à aplicação citada acima e observando sua resposta.

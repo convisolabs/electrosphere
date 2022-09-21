@@ -1,0 +1,11 @@
+nuclei-matcher-name:
+  access-control-allow-credentials:
+    report:
+      type: notification
+      vid: 358
+      description: A aplicação <a href="{{host}}" target="_blank">{{host}}</a> não possui o cabeçalho de resposta "access-control-allow-credentials" conforme demonstrado na evidência. Isso pode ser validado fazendo uma requisição à aplicação citada acima e observando sua resposta.
+  x-content-type-options:
+    report:
+      type: notification
+      vid: 358
+      description: A aplicação <a href="{{host}}" target="_blank">{{host}}</a> não possui o cabeçalho de resposta "x-content-type-options" conforme demonstrado na evidência. Isso pode ser validado fazendo uma requisição à aplicação citada acima e observando sua resposta.
