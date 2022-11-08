@@ -4,7 +4,8 @@ on:
    branches: [ main ]
  pull_request:
    branches: [ main ]
-
+ workflow_dispatch:
+ 
 jobs:
  conviso-cr:
    runs-on: ubuntu-latest
