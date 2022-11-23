@@ -117,4 +117,4 @@ This work is licensed under the [**MIT License**](LICENSE).
 <br>
  
 ## **And that 's it!**
-Thanks for all your contributions and efforts towards improving the Conviso Platform documentation. We thank you for being part of our community!
+Thanks for all your contributions and efforts towards improving this work. We thank you for being part of our community!
