@@ -50,9 +50,13 @@ You need Docker installed in your machine in order to run Electrosphere.
 ```
 
 ### Build docker image
-	
+ You have two options, you can build electrosphere with or without nuclei. If you want to run nuclei locally, you can build it like below:
 ```bash
   docker build -t electrosphere .
+```
+Otherwise, if you want electrosphere to run nuclei as well, you can build it like below:
+```bash
+  docker build -t electrosphere -f Dockerfile.nuclei .
 ```
 
 ## **Usage**
@@ -63,7 +67,7 @@ Electrosphere uses the nuclei output in JSONL(ines) format to register vulnerabi
 To generate the output correctly use the following command:
 
 ```bash
-  nuclei -u $HOST -t $TEMPLATE -json -irr -o nuclei_output.json
+  nuclei -u $HOST -t $TEMPLATE -j -irr -o nuclei_output.json
 ```
 
 Important: `Do not change or format the nuclei output`
@@ -83,6 +87,14 @@ Demo running in homologation environment
   docker run --rm -v $(pwd):/workspace -v /tmp:/tmp electrosphere  -k $X_API_KEY -p $PROJECT_ID -i nuclei_output.json -e hml
 ```
 ![Alt text](assets/readme/output.png "Options")
+
+### **Running nuclei with electrosphere**
+
+If you have built the docker image with nuclei, you can run it like this:
+
+```bash
+  docker run --rm -v $(pwd):/workspace -v /tmp:/tmp electrosphere  -r -u $URL_TO_SCAN -t $NUCLEI_TEMPLATE -k $X_API_KEY -p $PROJECT_ID -e hml
+```
 
 ---
 <br>

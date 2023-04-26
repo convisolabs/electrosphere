@@ -1,0 +1,24 @@
+FROM ruby:2.5-alpine
+
+RUN apk update
+RUN apk add build-base
+RUN apk add bash
+
+WORKDIR /electrosphere
+
+COPY /templates /electrosphere/templates
+COPY /core.rb /electrosphere/core.rb
+COPY /graphql_build.rb /electrosphere/graphql_build.rb
+COPY /reporter.rb /electrosphere/reporter.rb
+COPY /opt_parser.rb /electrosphere/opt_parser.rb
+COPY /printer.rb /electrosphere/printer.rb
+COPY /Gemfile /electrosphere/Gemfile
+COPY /start.rb /electrosphere/start.rb
+COPY /start.sh /electrosphere/start.sh
+RUN bundle install
+
+COPY --from=golang:alpine /usr/local/go/ /usr/local/go/
+ENV PATH="/usr/local/go/bin:/root/go/bin:${PATH}"
+RUN go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+
+ENTRYPOINT ["bash", "/electrosphere/start.sh"]
