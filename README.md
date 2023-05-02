@@ -50,13 +50,9 @@ You need Docker installed in your machine in order to run Electrosphere.
 ```
 
 ### Build docker image
- You have two options, you can build electrosphere with or without nuclei. If you want to run nuclei locally, you can build it like below:
+ Use the following script to build the docker image. You'll be prompted whether you want to install the image with or without nuclei.
 ```bash
-  docker build -t electrosphere .
-```
-Otherwise, if you want electrosphere to run nuclei as well, you can build it like below:
-```bash
-  docker build -t electrosphere -f Dockerfile.nuclei .
+  bash setup.sh
 ```
 
 ## **Usage**
